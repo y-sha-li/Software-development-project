@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Linkage Disequilibrium Calculator</title>
+  </head>
+  <body>
+    <!--Header for the webpage-->
+    <h1 style="color: teal;font-family: Calibri">Linkage Disequilibrium Calculator</h1>
+    
+    <!-- Form for submitting a linkage disequilibirum calculation -->
+    <form method="POST">
+      {{ LDform.hidden_tag() }}
+      <p>
+        <label style="font-family: Calibri;">{{ LDform.rsvalue.label }}<br>
+        {{ LDform.rsvalue(size=32) }}
+        {% if LDform.rsvalue.errors %}
+          {% for error in LDform.rsvalue.errors %}
+            <span style="color: red;">{{ error }}</span><br>
+          {% endfor %}
+        {% endif %}
+      </p>
+      <p>{{ LDform.submit_LD() }}</p>
+    </form>
+  </body>
+</html>

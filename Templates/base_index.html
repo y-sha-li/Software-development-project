@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Team Firefox - Type 1 Diabetes Application</title>
+</head>
+<body>
+    <!--Header and instruction for the user-->
+    <h1 style="color: teal; font-family: Calibri">Team Firefox - Type 1 Diabetes Application</h1>
+    <h4 style="font-family: Calibri">Please select one of the following links to conduct a search 
+        based on rsID value, gene name or the genomic coordinates</h4>
+        
+    <!--Create URLs for SNP, gene name, and genomic coordinates user input pages-->
+    <p style="font-family: Calibri"><a href="{{ url_for('SNP')}}">rsID</a></p>
+    <p style="font-family: Calibri"><a href="{{ url_for('Gene')}}">Gene</a></p>
+    <p style="font-family: Calibri"><a href="{{ url_for('Location')}}">Genomic coordinates</a></p>
+</body>

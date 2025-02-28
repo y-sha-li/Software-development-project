@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Genomic Coordinate data</title>
+    <style>
+    * {
+        font-family: Calibri;
+        }
+    </style>
+</head>
+<body>
+<!--Header for the web page-->
+<h1 style="color: navy";>Variants associated with Type 1 Diabetes and {{Gene}}</h1>
+
+<!--Display table of information for rsIDs related to the intput gene-->
+{% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+
+<!--Display information related to the the risk allele frequency columns of the output table-->
+<p style="color: maroon; font-family: Calibri;">FIN_freq - risk allele frequency for the Finish population from the 1000 genomes project (a coutry with high Type 1 Diabetes rates)</p>
+<p style="color: maroon; font-family: Calibri;">JPT_freq - risk allele frequency for the Japanese population from the 1000 genomes project ((a coutry with average Type 1 Diabetes rates)</p>
+<p style="color: maroon; font-family: Calibri;">NGA_freq - risk allele frequency for the Nigerian population from the 1000 genomes project (a coutry with low Type 1 Diabetes rates)</p>
+</body>
+</html>

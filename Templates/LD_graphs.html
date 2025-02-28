@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linkage Disequilibrium data</title>
+    <style>
+    * {
+        font-family: Calibri;
+        }
+    </style>
+</head>
+<body>
+<!--Header for the web page-->
+<h1 style="color: navy;">Linkage Disequilibrium Scores and Plots</h1>
+
+<!--Display table of information for pairwise linkage disequilibirum scores for Nigeria-->
+<p><strong>Table of pairwise linkage disequilibirum score for the Nigerian population </strong></p>
+{% for NGA_df in NGA_table %}
+            {{NGA_titles[loop.index]}}
+            {{ NGA_table|safe }}
+        </table>
+{% endfor %}
+<a class="btn btn-primary" onClick="download_NGA()" href="{{ url_for('download_NGA')}}" role="button">Download table as CSV</a>
+
+<!--Display linkage disequilibirum plot for Nigeria-->
+<img class="plot" src="data:image/png;base64, {{plot_url_NGA}}">
+
+<!--Display table of information for pairwise linkage disequilibirum scores for Japan-->
+<p><strong>Table of pairwise linkage disequilibirum score for the Japanese population </strong></p>
+{% for JPT_df in JPT_table %}
+            {{JPT_titles[loop.index]}}
+            {{ JPT_table|safe }}
+        </table>
+{% endfor %}
+<a class="btn btn-primary" onClick="download_JPT()" href="{{ url_for('download_JPT')}}" role="button">Download table as CSV</a>
+
+<!--Display linkage disequilibirum plot for Japan-->
+<img class="plot" src="data:image/png;base64, {{plot_url_JPT}}">
+
+<!--Display table of information for pairwise linkage disequilibirum scores for Finland-->
+<p><strong>Table of pairwise linkage disequilibirum score for the Finnish population </strong></p>
+{% for FIN_df in FIN_table %}
+            {{FIN_titles[loop.index]}}
+            {{ FIN_table|safe }}
+        </table>
+{% endfor %}
+<a class="btn btn-primary" onClick="download_FIN()" href="{{ url_for('download_FIN')}}" role="button">Download table as CSV</a>
+
+<!--Display linkage disequilibirum plot for Finland-->
+<img class="plot" src="data:image/png;base64, {{plot_url_FIN}}">
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Team Firefox - Type 1 Diabetes Application</title>
+  </head>
+  <body>
+    <!--Header for the web page-->
+    <h1 style="color: teal;font-family: Calibri">Team Firefox - Type 1 Diabetes Application</h1>
+    
+    <!--Form for submitting rsID value-->
+    <form method="POST">
+      {{ rform.hidden_tag() }}
+      <p>
+        <label style="font-family: Calibri;">{{ rform.rs_ID.label }}</label>
+        {{ rform.rs_ID(size=32) }}
+        {% if rform.rs_ID.errors %}
+          {% for error in rform.rs_ID.errors %}
+            <span style="color: red;">{{ error }}</span><br>
+          {% endfor %}
+        {% endif %}
+      </p>
+      <p>{{ rform.submit_rsID() }}</p>
+    </form>
+  </body>
+</html>

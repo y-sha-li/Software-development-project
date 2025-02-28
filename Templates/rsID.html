@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Team Firefox rsID data</title>
+    <style>
+    * {
+        font-family: Calibri;
+        }
+    </style>
+</head>
+<body>
+    <!--Header for the web page-->
+    <h1 style="color: navy;">{{ID}}</h1>
+    
+    <!--Display information related to the rsID-->
+    <p>Location of gene on Chromosome 6: {{Location}} </p>
+    <p>Risk allele: {{Allele}} </p>
+    <p>P-value: {{pval}} </p>    
+    <p>Variant Functional Impact: {{VFI}} </p>
+    <p>Variant Clinical Relevance: {{VCR}} </p>
+    <p>Finland Risk Allele Frquency: {{FINf}} </p>
+    <p>Japan Risk Allele Frquency: {{JPTf}} </p>    
+    <p>Nigeria Risk Allele Frquency: {{NGAf}} </p> 
+        
+    <p style="color: maroon; font-size: 120%"><strong>Genes and realted gene ontology terms associated with {{ID}}: </strong></p>
+        
+    <p style="color: gray;"><strong> {{Gene1}} </strong></p>
+    <p>Biological process: {{BP1}} </p>
+    <p>Cellular component: {{CC1}} </p>
+    <p>Molecular Function: {{MF1}} </p>
+     
+    <!--If a second mapped gene is present, output as above-->
+    {% if Gene2 %}
+    <p style="color: gray;"><strong> {{ Gene2 }} </strong></p>
+    <p>Biological process: {{ BP2 }} </p>
+    <p>Cellular component: {{ CC2 }} </p>
+    <p>Molecular Function: {{ MF2 }} </p>
+    {% else %}
+        <br>
+    {% endif %}
+</body>

@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Team Firefox - Type 1 Diabetes Application</title>
+  </head>
+  <body>
+    <!--Header for the web page-->
+    <h1 style="color: teal;font-family: Calibri">Team Firefox - Type 1 Diabetes Data Application</h1>
+    
+    <!--Form for submitting gene name-->
+    <form method="POST">
+      {{ gform.hidden_tag() }}
+      <p>
+        <label style="font-family: Calibri;">{{ gform.gene_name.label }}</label>
+        {{ gform.gene_name(size=32) }}
+        {% if gform.gene_name.errors %}
+          {% for error in gform.gene_name.errors %}
+            <span style="color: red;">{{ error }}</span><br>
+          {% endfor %}
+        {% endif %}
+      </p>
+      <p>{{ gform.submit_gene() }}</p>
+    </form>
+  </body>
+</html>

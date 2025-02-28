@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Team Firefox - Type 1 Diabetes Application</title>
+  </head>
+  <body>
+    <!--Header for the web page-->
+    <h1 style="color: teal;font-family: Calibri">Team Firefox - Type 1 Diabetes Application</h1>
+    
+    <!--Form for submitting genomic coordinates-->
+    <form method="POST" id="lform">
+      {{ lform.hidden_tag() }}
+      <p>
+    
+        <!-- Input field for the chromosome number -->
+        <label style="font-family: Calibri;">{{ lform.chromosome.label }}</label>
+        {{ lform.chromosome() }}
+        {% if lform.chromosome.errors %}
+          {% for error in lform.chromosome.errors %}
+            <span style="color: red;">{{ error }}</span><br>
+          {% endfor %}
+        {% endif %}
+        
+        <!-- Input field for the starting base pair position -->
+        <label style="font-family: Calibri;">{{ lform.startbp.label }}</label>
+        {{ lform.startbp() }}
+        {% if lform.startbp.errors %}
+          {% for error in lform.startbp.errors %}
+            <span style="color: red;">{{ error }}</span><br>
+          {% endfor %}
+        {% endif %}
+        
+        <!-- Input field for the end base pair position -->
+        <label style="font-family: Calibri;">{{ lform.endbp.label }}</label>
+        {{ lform.endbp() }}
+        {% if lform.endbp.errors %}
+          {% for error in lform.endbp.errors %}
+            <span style="color: red;">{{ error }}</span><br>
+          {% endfor %}
+        {% endif %}
+      </p>
+      <p>{{ lform.submit_location() }}</p>
+    </form>
+  </body>
+</html>
